@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AddMeBuddy | Premium Study Abroad Companion</title>
+  <meta name="description" content="Your premium, Apple-like portal for global education. Match with top universities, access expert counseling, prepare for visas, and connect with study abroad buddies.">
+  
+  <!-- SEO & Theme Setup -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // FOUC (Flash of Unstyled Content) Prevention Script for System Color Theme
+    {
+      const colorScheme = localStorage.getItem("color-scheme");
+      if (colorScheme) {
+        document.querySelector('meta[name="color-scheme"]').content = colorScheme;
+      }
+    }
+  </script>
+
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Cursor follower removed (system cursor active) -->
+
+  <!-- Navigation Bar -->
+  <header id="main-header" class="main-header">
+    <nav class="nav-container">
+      <a href="#" class="logo-link" id="logo-link" aria-label="AddMeBuddy Home">
+        <img src="assets/logo.png" alt="AddMeBuddy Study Abroad Logo" class="logo-img">
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#journey-section" class="nav-item">The Journey</a>
+        <a href="#services-section" class="nav-item">Services</a>
+        <a href="#social-section" class="nav-item">Social Hub</a>
+        <a href="#connect-section" class="nav-item">Connect</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Switch -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a href="#connect-section" class="btn btn-primary btn-nav" id="nav-cta-btn">Apply Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero-section">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="hero-container">
+        
+        <div class="hero-content">
+          <div class="hero-badge reveal-item">Study Abroad, Simplified</div>
+          <h1 class="hero-title reveal-item">
+            Your Gateway to <br>
+            <span class="gradient-text">Global Education.</span>
+          </h1>
+          <p class="hero-subtitle reveal-item">
+            Connect with universities, prepare your journey, and navigate visa processes together with peers and mentors. Experience study abroad with your ultimate buddy.
+          </p>
+          <div class="hero-buttons reveal-item">
+            <a href="#journey-section" class="btn btn-primary">Start Your Journey</a>
+            <a href="#services-section" class="btn btn-secondary">Explore Services</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal-item">
+          <!-- Placeholder container styled flexibly for later Spline 3D Integration -->
+          <div id="hero-3d-slot" class="hero-3d-slot">
+            
+            <!-- Canvas for Interactive 3D Particle Orb (Interactive Fallback) -->
+            <canvas id="hero-canvas"></canvas>
+
+            <!-- 
+            TO INTEGRATE SPLINE 3D:
+            1. Uncomment the script element in head or before body closing:
+               <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.91/build/spline-viewer.js"></script>
+            2. Replace <canvas id="hero-canvas"></canvas> with:
+               <spline-viewer url="https://prod.spline.design/your-scene-id/scene.splinecode"></spline-viewer>
+            -->
+            
+            <!-- Ambient Glow inside Slot -->
+            <div class="slot-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+        <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+        <span class="scroll-text">Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- The Journey Section (Scrollytelling Path) -->
+    <section id="journey-section" class="journey-section">
+      <div class="section-header center-align">
+        <span class="section-tag">How It Works</span>
+        <h2 class="section-title">The Buddy Path</h2>
+        <p class="section-subtitle">A synchronized progression tracking your milestones from dream to arrival.</p>
+      </div>
+
+      <!-- Double Column Scrollytelling Setup -->
+      <div class="scrollytelling-container">
+        
+        <!-- Left Side: Sticky Visuals Card Frame -->
+        <div class="scrolly-visuals">
+          <div class="sticky-card-wrapper">
+            <div class="journey-bg-ambient" id="journey-ambient" aria-hidden="true"></div>
+            
+            <!-- Dynamic Cards matching active text block -->
+            <div class="visual-card active" data-step="1">
+              <div class="card-glow-tracker"></div>
+              <div class="card-inner">
+                <div class="step-num">01</div>
+                <h3 class="step-card-title">Profile Discover</h3>
+                <p>Analyzing academic profile, preferences, budgets, and choosing ideal destinations.</p>
+                <div class="step-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card" data-step="2">
+              <div class="card-glow-tracker"></div>
+              <div class="card-inner">
+                <div class="step-num">02</div>
+                <h3 class="step-card-title">Buddy Match</h3>
+                <p>Linking with top-tier universities and matching with student peers going to the same area.</p>
+                <div class="step-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card" data-step="3">
+              <div class="card-glow-tracker"></div>
+              <div class="card-inner">
+                <div class="step-num">03</div>
+                <h3 class="step-card-title">Prep & Process</h3>
+                <p>Curating Statement of Purpose (SOP), preparing recommendation letters, and university forms.</p>
+                <div class="step-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card" data-step="4">
+              <div class="card-glow-tracker"></div>
+              <div class="card-inner">
+                <div class="step-num">04</div>
+                <h3 class="step-card-title">Fly & Land</h3>
+                <p>Managing visa document checks, mock interviews, landing lodging, and campus networking.</p>
+                <div class="step-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"></path><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Side: Scrollable narrative text tracking blocks -->
+        <div class="scrolly-text" id="tracked">
+          
+          <section class="text-block" data-step="1" id="step-discover">
+            <span class="block-indicator">Step 01</span>
+            <h3>Assess Profile & Options</h3>
+            <p>We kick off the journey by mapping out your profile. Select from hundreds of courses across the USA, UK, Canada, Europe, and Australia. Our buddy algorithms pinpoint the sweet spots matching your budget, grades, and dreams.</p>
+            <ul class="block-details">
+              <li>Detailed transcript & grades mapping</li>
+              <li>Country specific visa likelihood metrics</li>
+              <li>Financial plans & scholarship filtering</li>
+            </ul>
+          </section>
+
+          <section class="text-block" data-step="2" id="step-match">
+            <span class="block-indicator">Step 02</span>
+            <h3>Peer & University Match</h3>
+            <p>Study abroad is never a solo mission. AddMeBuddy introduces you to peers targeting identical schools or destinations. Simultaneously, get direct application portals to top universities with fast-track offer evaluations.</p>
+            <ul class="block-details">
+              <li>Peer matching chat channels</li>
+              <li>Direct university application fast-track</li>
+              <li>Alumni connect interviews</li>
+            </ul>
+          </section>
+
+          <section class="text-block" data-step="3" id="step-prep">
+            <span class="block-indicator">Step 03</span>
+            <h3>Document Drafting & Applications</h3>
+            <p>Our experts and AI assistant polish your Statement of Purpose (SOP), refine your Resume, and organize Letters of Recommendation. We handle submission coordination to ensure zero application discrepancies.</p>
+            <ul class="block-details">
+              <li>Advanced SOP feedback & grammar polishing</li>
+              <li>Standardized test waiver consulting</li>
+              <li>Application timeline checklist trackers</li>
+            </ul>
+          </section>
+
+          <section class="text-block" data-step="4" id="step-fly">
+            <span class="block-indicator">Step 04</span>
+            <h3>Visa Strategy & Landing Buddy</h3>
+            <p>Get full preparation for crucial visa interviews. From financial document checklists to mock interviews with visa consultants. Once approved, connect with a local landing buddy for accommodation assistance and airport pick-up.</p>
+            <ul class="block-details">
+              <li>1-on-1 mock visa interview rehearsals</li>
+              <li>Pre-departure luggage & checklist kits</li>
+              <li>Local accommodation mapping</li>
+            </ul>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services-section" class="services-section">
+      <div class="section-header center-align">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">Designed for Your Success</h2>
+        <p class="section-subtitle">Premium solutions engineered to take you to top-ranked international campuses.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Service Card 1 -->
+        <div class="service-card reveal-item" id="service-card-counseling">
+          <div class="card-glow-tracker"></div>
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3>Course Counseling</h3>
+          <p>Get personalized guidance from counselors who have studied at top global institutions. Find your right fit academic trajectory.</p>
+          <a href="#connect-section" class="card-link">Learn more <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card reveal-item" id="service-card-visa">
+          <div class="card-glow-tracker"></div>
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+          <h3>Visa Processing</h3>
+          <p>Our visa specialists maintain a 98.7% success rate. We guide you through financial documentation checks and mock Q&As.</p>
+          <a href="#connect-section" class="card-link">Learn more <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card reveal-item" id="service-card-exams">
+          <div class="card-glow-tracker"></div>
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </div>
+          <h3>Test Preparation</h3>
+          <p>Master IELTS, TOEFL, GRE, and GMAT. Access modern mock-test engines, practice modules, and diagnostic feedback reports.</p>
+          <a href="#connect-section" class="card-link">Learn more <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="service-card reveal-item" id="service-card-community">
+          <div class="card-glow-tracker"></div>
+          <div class="service-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3>Buddy Community</h3>
+          <p>Join the student network. Meet other applicants heading to your specific city or campus. Share rooms, resources, and expenses.</p>
+          <a href="#connect-section" class="card-link">Learn more <span class="arrow">&rarr;</span></a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Social Media Section (Adapting Environment) -->
+    <section id="social-section" class="social-section">
+      <!-- Section-wide ambient lighting glow -->
+      <div class="social-ambient-glow" id="social-ambient" aria-hidden="true"></div>
+      
+      <div class="social-container">
+        <div class="social-info reveal-item">
+          <span class="section-tag">Stay Connected</span>
+          <h2 class="section-title">Join Our Community</h2>
+          <p class="section-subtitle">Hover over our hubs to see the environment shift. Get daily study abroad hacks, university spotlights, and student stories across our social channels.</p>
+        </div>
+
+        <div class="social-grid">
+          
+          <!-- Instagram Card -->
+          <a href="https://www.instagram.com/addmebuddy_?igsh=MWhwbzY4bWc2MDdteA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-card instagram-badge reveal-item" data-brand="instagram" aria-label="AddMeBuddy on Instagram">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+            <div class="social-details">
+              <h4>Instagram</h4>
+              <span>@addmebuddy_</span>
+            </div>
+            <div class="social-arrow">&nearr;</div>
+          </a>
+
+          <!-- WhatsApp Card -->
+          <a href="https://whatsapp.com/channel/0029VbD62qHL7UVTtIHH9S2r" target="_blank" rel="noopener noreferrer" class="social-card whatsapp-badge reveal-item" data-brand="whatsapp" aria-label="AddMeBuddy on WhatsApp">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21l1.9-5.7a8.5 8.5 0 1 1 3.8 3.8L3 21z"></path>
+                <path d="M16 12.5c-.2-.1-.7-.4-.8-.5-.1-.1-.2-.1-.3.1l-.3.4c-.1.1-.2.1-.4 0-.3-.1-.9-.3-1.7-1-.6-.5-.9-1.1-1-1.3-.1-.2 0-.3.1-.4l.3-.3.2-.2c.1-.1.1-.2 0-.3l-.5-1.2c-.1-.3-.2-.3-.3-.3h-.3c-.2 0-.4.1-.5.3-.2.2-.6.6-.6 1.5s.7 1.8.8 2c.1.1 1.4 2.2 3.5 3.1.5.2.9.3 1.2.4.5.2 1 .1 1.4.1.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3z" opacity="0.85"></path>
+              </svg>
+            </div>
+            <div class="social-details">
+              <h4>WhatsApp</h4>
+              <span>Join WhatsApp Channel</span>
+            </div>
+            <div class="social-arrow">&nearr;</div>
+          </a>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/company/addmebuddy/" target="_blank" rel="noopener noreferrer" class="social-card linkedin-badge reveal-item" data-brand="linkedin" aria-label="AddMeBuddy on LinkedIn">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div class="social-details">
+              <h4>LinkedIn</h4>
+              <span>AddMeBuddy</span>
+            </div>
+            <div class="social-arrow">&nearr;</div>
+          </a>
+
+          <!-- X Card (Twitter) -->
+          <a href="https://x.com/addmebuddy_?s=21" target="_blank" rel="noopener noreferrer" class="social-card x-badge reveal-item" data-brand="x" aria-label="AddMeBuddy on X">
+            <div class="social-icon">
+              <!-- Custom modern X path -->
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 11.667h.002L20 20H4l7.867-7.8L4 4z"></path><path d="M20 4L8.267 15.667H4L15.733 4H20z" opacity="0.3"></path></svg>
+            </div>
+            <div class="social-details">
+              <h4>X / Twitter</h4>
+              <span>@AddMeBuddy_</span>
+            </div>
+            <div class="social-arrow">&nearr;</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect / Contact Form Section -->
+    <section id="connect-section" class="connect-section">
+      <div class="connect-container">
+        
+        <div class="connect-info reveal-item">
+          <span class="section-tag">Get Started Today</span>
+          <h2 class="section-title">Book a FREE Counselling</h2>
+          <p class="section-subtitle">Take the first step towards your international education. Fill out the details, and a Buddy Counselor will reach out within 24 hours.</p>
+          
+          <div class="connect-metrics">
+            <div class="metric">
+              <span class="metric-num">98.7%</span>
+              <span class="metric-label">Visa Success Rate</span>
+            </div>
+            <div class="metric">
+              <span class="metric-num">120+</span>
+              <span class="metric-label">Partner Universities</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="connect-form-wrapper reveal-item">
+          <!-- Glassmorphic premium form -->
+          <form id="consultation-form" class="consultation-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="27ca764f-d288-4ba2-ae1a-74500e535f5f">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="form-name" name="name" required placeholder=" ">
+                <label for="form-name">Full Name</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="form-email" name="email" required placeholder=" ">
+                <label for="form-email">Email Address</label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="form-phone" name="phone" required placeholder=" ">
+                <label for="form-phone">Phone Number</label>
+              </div>
+              <div class="form-group select-group">
+                <select id="form-destination" name="destination" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="usa">United States (USA)</option>
+                  <option value="uk">United Kingdom (UK)</option>
+                  <option value="canada">Canada</option>
+                  <option value="australia">Australia</option>
+                  <option value="europe">Europe</option>
+                  <option value="others">Others</option>
+                </select>
+                <label for="form-destination">Target Destination</label>
+                <div class="select-arrow">&#9662;</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <textarea id="form-message" name="message" rows="4" placeholder=" "></textarea>
+              <label for="form-message">Tell us about your background & ambitions</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit" id="form-submit-btn">
+              <span>Request Free Session</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <div id="form-status" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo-link">
+          <img src="assets/logo.png" alt="AddMeBuddy Study Abroad Logo" class="logo-img footer-logo-img">
+        </a>
+        <p class="footer-desc">Redefining study abroad prep as a premium collaborative journey. Never travel alone.</p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Destinations</h5>
+          <a href="#connect-section">Study in USA</a>
+          <a href="#connect-section">Study in UK</a>
+          <a href="#connect-section">Study in Canada</a>
+          <a href="#connect-section">Study in Europe</a>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#services-section">Counseling</a>
+          <a href="#services-section">Visa Checklist</a>
+          <a href="#services-section">Test Preparation</a>
+          <a href="#services-section">Peer Match</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="#connect-section">Contact Us</a>
+          <a href="#social-section">FAQs & Tips</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 AddMeBuddy. All rights reserved. Made for Global Achievers.</p>
+      <p class="footer-credit">Made with <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#ff4d4d"/></svg> by AddMeBuddy.</p>
+      <div class="footer-status-pill">
+        <span class="status-dot"></span> System Theme Sync Active
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
